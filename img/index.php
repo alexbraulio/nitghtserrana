@@ -1,5 +1,5 @@
 <?php 
- $redirect = "http://www.worldvision3d.com/nightserrana/";
+ $redirect = "http://www.nightserrana.com.br";
  
  header("location:$redirect");
  

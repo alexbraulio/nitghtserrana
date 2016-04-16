@@ -7,7 +7,7 @@
 
 //CONEXÃO COM PDO
 $pdo=new PDO
-(	"mysql:host=localhost;dbname=u737997304_siste","root","")
-//("mysql:host=mysql.hostinger.com.br;dbname=u737997304_siste","u737997304_igcar","nysMdWJc3bhvPYP9Uy")
+//(	"mysql:host=localhost;dbname=u737997304_siste","root","")
+("mysql:host=mysql.hostinger.com.br;dbname=u747579689_alfa","u747579689_alfa","xU1O5EEJ5I")
 ?>
 

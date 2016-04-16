@@ -1,3 +1,22 @@
+<?php
+$usuario="admin";
+$senha="nightserrana2016";
+
+function msg_erro(){
+    header('WWW-Authenticate: Basic realm="NIGHTSERRANA - Acesso Restrito"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo '<h1>Acesso Restrito - Digite os dados de Autenticação</h1>';
+    exit;
+}
+
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
+     msg_erro();
+}else{
+     if ($_SERVER['PHP_AUTH_USER']!=$usuario || $_SERVER['PHP_AUTH_PW']!=$senha) {
+              msg_erro();
+     }
+}
+?>
 <html lang="pt-br">
 
 <head>
@@ -9,7 +28,7 @@
     <meta name="author" content="worldvision3d">
 
     <title>NightSerrana</title>
-
+<link rel="icon" type="image/png" href="/nightserrana/img/ico.ico" />
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -86,7 +105,9 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h2 align="center">NightSerrana</h2>
-                        <p class="intro-text">As melhores opções da noite Petropolitana.<br>Saiba de todas as baladas que estão rolando no momento.<br>Conheça todos os bares disponíveis e muito mais.</p>
+                        <p class="intro-text">As melhores opções da noite Petropolitana.<br>
+                            Saiba de todas as baladas que estão rolando no momento.<br>
+                            Conheça todos os bares disponíveis e muito mais.</p>
                              <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -103,15 +124,15 @@
                 <h2>NightSerrana</h2>
  <p>A NightSerrana vem apresentar tudo que há de melhor na noite petropolitana,
   para que você e seus amigos possam curtir as melhores baladas da cidade!!
-Conheça as <a href="http://www.nightserrana.com.br/#casasnoturna">Casas Noturnas</a>
- e todas as <a href="http://www.nightserrana.com.br/#chopp">Chopperias disponíveis</a>.
+Conheça as <a href="http://www.nightserrana.com.br/home.php#casasnoturna">Casas Noturnas</a>
+ e todas as <a href="http://www.nightserrana.com.br/home.php#chopp">Chopperias disponíveis</a>.
 </p>
 <p>Gostaria de reunir os amigos e tomar aquela cerveja bem gelada, 
 mas não sabe onde ir?! Então a NightSerrana lhe mostra todos os 
-<a href="http://www.nightserrana.com.br/#bar">Bares</a> 
+<a href="http://www.nightserrana.com.br/home.php#chopp">Bares</a> 
 da cidade de Petrópolis. Aqui você ficará por dentro de tudo que há 
 de disponível para sua Night, e ainda pode encontrar os melhores 
-<a href="http://www.nightserrana.com.br/#restaurante">Restaurantes</a>.</p>
+<a href="http://www.nightserrana.com.br/home.php#restaurante">Restaurantes</a>.</p>
                 <p>Na NightSerrana você conhece todos os lugares em um só lugar.</p>
             </div>
         </div>
@@ -124,7 +145,7 @@ de disponível para sua Night, e ainda pode encontrar os melhores
                 <div class="col-lg-8 col-lg-offset-2">
                     <font color="black"><h2>Conheça os Bares de Petrópolis.</h2></font>
                     <font color="black"><p>Veja todos os detalhes abaixo.</p></font>
-                    <a href="http://worldvision3d.com/nightserrana/bares" class="btn btn-default btn-lg">Visitar Bares</a>
+                    <a href="http://www.nightserrana.com.br/bares" class="btn btn-default btn-lg">Visitar Bares</a>
                 </div>
             </div>
         </div>
@@ -137,7 +158,7 @@ de disponível para sua Night, e ainda pode encontrar os melhores
 <font color="#FFFFFF"><h2>Conheça as Boates de Petrópolis.</h2></font>
                      <ul class="list-inline banner-social-buttons">                    
                     <li>
-                <a href="http://worldvision3d.com/nightserrana/bares" class="btn btn-default btn-lg">
+                <a href="http://www.nightserrana.com.br/bares" class="btn btn-default btn-lg">
                     <i class="fa fa-github fa-fw"></i> <span class="network-name">Ver todas as opções</span></a>
                     </li>                  
                 </ul>
@@ -172,7 +193,7 @@ de disponível para sua Night, e ainda pode encontrar os melhores
                                 </div>
                                  <br><br><br><br><br><br>
                                 <div class="mbr-buttons btn-inverse mbr-buttons--center">
-            <a class="mbr-buttons__btn btn btn-lg btn-default" href="http://worldvision3d.com/nightserrana/bares">Clique e conheça</a>
+            <a class="mbr-buttons__btn btn btn-lg btn-default" href="http://www.nightserrana.com.br/bares">Clique e conheça</a>
             <br><br><br><br>
         </div>
                             </div></div>
@@ -203,7 +224,7 @@ de disponível para sua Night, e ainda pode encontrar os melhores
                                  <br><br><br><br><br><br>
                                 <div class="mbr-buttons btn-inverse mbr-buttons--center">
             <a class="mbr-buttons__btn btn btn-lg btn-default" 
-            href="http://worldvision3d.com/nightserrana/bares">Clique e conheça</a>
+            href="http://www.nightserrana.com.br/bares">Clique e conheça</a>
             <br><br><br><br>
         </div>
                             </div></div>
@@ -232,7 +253,7 @@ de disponível para sua Night, e ainda pode encontrar os melhores
                                </font></div>
                                 <br><br><br><br><br><br>
                                 <div class="mbr-buttons btn-inverse mbr-buttons--center">
-            <a class="mbr-buttons__btn btn btn-lg btn-default" href="http://worldvision3d.com/nightserrana/bares">Clique e conheça</a>
+            <a class="mbr-buttons__btn btn btn-lg btn-default" href="http://www.nightserrana.com.br/bares">Clique e conheça</a>
             <br><br><br><br>
         </div>
                             </div></div>
@@ -286,7 +307,7 @@ de disponível para sua Night, e ainda pode encontrar os melhores
                 <h2>Os bares e choperias da cidade Petropolitana.</h2>
                 <ul class="list-inline banner-social-buttons">                    
                     <li>
-                <a href="http://worldvision3d.com/nightserrana/bares" class="btn btn-default btn-lg">
+                <a href="http://www.nightserrana.com.br/bares" class="btn btn-default btn-lg">
                     <i class="fa fa-github fa-fw"></i> <span class="network-name">Ver todas as opções</span></a>
                     </li>                  
                 </ul>
@@ -401,22 +422,22 @@ jssor_1_slider_init();
 
 
 <br><br>
-    <section id="restaurante" class="container content-section text-center">
+   
 
 
+<section id="restaurante" class="content-section text-center">
+        <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <font color="#FFFFFF"><h2>Em breve.</h2></font>
-                    <font color="#FFFFFF"><p>Os melhores restaurantes da Night.</p></font>
-
-                    
+                    <font color="black"><h2>Conheça os Resturantes.</h2></font>
+                    <font color="black"><p>Veja todos os detalhes abaixo.</p></font>
+                    <a href="http://www.nightserrana.com.br/bares" class="btn btn-default btn-lg">Visitar Restaurantes.</a>
                 </div>
             </div>
-     
+        </div>
+    </section>
 
-
-
-</section>
+    
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
@@ -489,35 +510,9 @@ jssor_1_slider_init();
 
 <br><br>
   
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; NightSerrana 2016 </p> <p>  <?php
-$arquivo = "contador.txt";
-// Este é o arquivo de texto que mantemos na nossa contagem
-
-$handle = fopen($arquivo, 'r+') ;
-/*
-Aqui vamos definir o arquivo, as permissões para ler e escrever, por isso utilizamos o r+ (ler e escrever no arquivo)
-*/
-
-$data = fread($handle, 512) ;
-//Obtem a contagem atual do arquivo
-
-$contador = $data + 1;
-//Adiciona + 1
-print "Número de acessos ".$contador;
-//Exibe na tela o resultado encontrado no TXT
-
-fseek($handle, 0);
-
-fwrite($handle, $contador) ;
-// Salva o valor da variavel contador no arquivo
-
-fclose($handle) ;
-// Fecha o arquivo
-?></p>
-        </div>
-    </footer>
+<?php 
+require_once('footer.php'); ?>
+    
     
 
 

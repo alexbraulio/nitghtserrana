@@ -1,3 +1,22 @@
+<?php
+$usuario="admin";
+$senha="nightserrana2016";
+
+function msg_erro(){
+    header('WWW-Authenticate: Basic realm="NIGHTSERRANA - Acesso Restrito"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo '<h1>Acesso Restrito - Digite os dados de Autenticação</h1>';
+    exit;
+}
+
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
+     msg_erro();
+}else{
+     if ($_SERVER['PHP_AUTH_USER']!=$usuario || $_SERVER['PHP_AUTH_PW']!=$senha) {
+              msg_erro();
+     }
+}
+?>
 <html lang="pt-br">
 
 <head>
@@ -10,6 +29,7 @@
 
     <title>NightSerrana</title>
 
+    <link rel="icon" type="image/png" href="/nightserrana/img/ico.ico" />
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -47,7 +67,7 @@
                         <a href="#page-top"></a>
                     </li>
                      <li>
-                        <a class="page-scroll" href="http://worldvision3d.com/nightserrana/">NightSerrana</a>
+                        <a class="page-scroll" href="/">NightSerrana</a>
                     </li>
                      <li>
                         <a class="page-scroll" href="#bar">Bares</a>
@@ -92,7 +112,7 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-            <img src="http://worldvision3d.com/nightserrana/img/bares/thumb-01.jpg"
+            <img src="/nightserrana/img/bares/thumb-01.jpg"
             class="center-block img-circle img-responsive">
             <br>
 
@@ -120,7 +140,7 @@
               
           </div>
           <div class="col-md-4">
-            <img src="http://worldvision3d.com/nightserrana/img/bares/thumb-04.jpg"
+            <img src="/nightserrana/img/bares/thumb-04.jpg"
             class="center-block img-circle img-responsive">
             <h2 class="text-center">Plano Pro</h2>
             <h3 class="text-center">crição de foto</h3>
@@ -148,7 +168,7 @@
 
           </div>
           <div class="col-md-4">
-            <img src="http://worldvision3d.com/nightserrana/img/bares/thumb-07.jpg"
+            <img src="/nightserrana/img/bares/thumb-07.jpg"
             class="center-block img-circle img-responsive">
             <h2 class="text-center">Expert</h2>
             <h3 class="text-center">crição de foto</h3>
@@ -190,7 +210,7 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-            <img src="http://worldvision3d.com/nightserrana/img/bares/007.jpg"
+            <img src="/nightserrana/img/boatebasico.jpg"
             class="center-block img-circle img-responsive">
             <br>
 
@@ -216,7 +236,7 @@
 
           </div>
           <div class="col-md-4">
-            <img src="http://worldvision3d.com/nightserrana/img/bares/007.jpg"
+            <img src="/nightserrana/img/boatepro.jpg"
             class="center-block img-circle img-responsive">
             <h2 class="text-center">Plano Pro</h2>
             <h3 class="text-center">crição de foto</h3>
@@ -243,7 +263,7 @@
 
           </div>
           <div class="col-md-4">
-            <img src="http://worldvision3d.com/nightserrana/img/bares/007.jpg"
+            <img src="/nightserrana/img/boateultra.jpg"
             class="center-block img-circle img-responsive">
             <h2 class="text-center">Expert</h2>
             <h3 class="text-center">crição de foto</h3>
